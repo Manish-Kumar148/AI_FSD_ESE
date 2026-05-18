@@ -19,6 +19,20 @@ export const AuthProvider = ({ children }) => {
       setIsAuthenticated(false);
     }
     setLoading(false);
+
+    const interceptor = axios.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        if (error.response && error.response.status === 401) {
+          logout();
+        }
+        return Promise.reject(error);
+      }
+    );
+
+    return () => {
+      axios.interceptors.response.eject(interceptor);
+    };
   }, [token]);
 
   const login = async (email, password) => {
