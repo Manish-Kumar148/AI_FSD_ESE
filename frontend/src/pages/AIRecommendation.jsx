@@ -17,7 +17,7 @@ const AIRecommendation = () => {
     setError('');
     try {
       const payload = id === 'all' ? { type: 'ranking' } : { employeeId: id, type: reqType };
-      const res = await axios.post('http://localhost:5001/api/ai/recommend', payload);
+      const res = await axios.post('/api/ai/recommend', payload);
       setRecommendation(res.data.recommendation);
       setType(reqType);
     } catch (err) {

@@ -23,7 +23,7 @@ const EmployeeForm = () => {
         ...formData,
         skills: formData.skills.split(',').map(s => s.trim()).filter(s => s)
       };
-      await axios.post('http://localhost:5001/api/employees', payload);
+      await axios.post('/api/employees', payload);
       navigate('/dashboard');
     } catch (err) {
       setError(err.response?.data?.msg || 'Failed to add employee');

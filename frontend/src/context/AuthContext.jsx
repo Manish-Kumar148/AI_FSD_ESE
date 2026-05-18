@@ -22,12 +22,12 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   const login = async (email, password) => {
-    const res = await axios.post('http://localhost:5001/api/auth/login', { email, password });
+    const res = await axios.post('/api/auth/login', { email, password });
     setToken(res.data.token);
   };
 
   const register = async (email, password) => {
-    const res = await axios.post('http://localhost:5001/api/auth/signup', { email, password });
+    const res = await axios.post('/api/auth/signup', { email, password });
     setToken(res.data.token);
   };
 
