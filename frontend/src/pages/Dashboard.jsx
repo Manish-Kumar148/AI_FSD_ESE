@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Search, Plus, Trash2, Brain, LogOut, Sparkles } from 'lucide-react';
+import { Search, Plus, Trash2, Brain, LogOut, Sparkles, BarChart2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Dashboard = () => {
@@ -54,8 +54,8 @@ const Dashboard = () => {
           <Link to="/add-employee" className="btn-primary flex items-center gap-2">
             <Plus className="w-5 h-5" /> Add Employee
           </Link>
-          <Link to="/ai-recommendation/all" className="bg-purple-600 hover:bg-purple-500 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
-            <Sparkles className="w-5 h-5" /> AI Ranking
+          <Link to="/analytics" className="bg-purple-600 hover:bg-purple-500 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
+            <BarChart2 className="w-5 h-5" /> Analytics & Rankings
           </Link>
           <button onClick={handleLogout} className="bg-dark-700 hover:bg-dark-600 p-2 rounded-lg transition-colors">
             <LogOut className="w-5 h-5" />

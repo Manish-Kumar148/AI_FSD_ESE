@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import EmployeeForm from './pages/EmployeeForm';
 import AIRecommendation from './pages/AIRecommendation';
+import Analytics from './pages/Analytics';
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
@@ -43,6 +44,14 @@ function AppRoutes() {
             element={
               <ProtectedRoute>
                 <AIRecommendation />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/analytics" 
+            element={
+              <ProtectedRoute>
+                <Analytics />
               </ProtectedRoute>
             } 
           />
